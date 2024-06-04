@@ -9,7 +9,8 @@
 </div>
 </div>
 
-    <div>Product list</div>
+    <div>Подборки </div>
+
 <table  class="table" >
 <thead>
 <tr>
@@ -26,7 +27,7 @@
     </tr>
 <div>
 <#else>
-<h4>No product</h4>
+<h4>No movies</h4>
 
  </#list>
 

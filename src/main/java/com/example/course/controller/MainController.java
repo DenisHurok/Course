@@ -1,10 +1,10 @@
 package com.example.course.controller;
 
 
-import com.example.course.Models.Product;
 
-import com.example.course.repos.ProductRepos;
 
+import com.example.course.model.Category;
+import com.example.course.repos.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
@@ -19,7 +19,7 @@ import java.util.Map;
 @Controller
 public class MainController {
     @Autowired
-    private ProductRepos productRepos;
+    private CategoryRepository categoryRepository;
 
     @GetMapping("/")
     public String greeting(Map<String, Object> model) {
@@ -29,13 +29,8 @@ public class MainController {
 
     @GetMapping("/main")
     public String main(@RequestParam(required = false, defaultValue = "") String filter, Model model) {
-        Iterable<Product> products = productRepos.findAll();
-        if (filter != null && !filter.isEmpty()) {
-            products = productRepos.findByNameStartingWith(filter);
-        } else {
-            products = productRepos.findAll();
-        }
-        model.addAttribute("products", products);
+        Iterable<Category> categories = categoryRepository.findAll();
+        model.addAttribute("products", categories);
         model.addAttribute("filter", filter);
         return "main";
     }

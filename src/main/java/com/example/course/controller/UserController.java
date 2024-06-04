@@ -1,7 +1,7 @@
 package com.example.course.controller;
 
-import com.example.course.Models.Role;
-import com.example.course.Models.User;
+import com.example.course.model.Role;
+import com.example.course.model.User;
 import com.example.course.repos.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
