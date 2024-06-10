@@ -1,4 +1,3 @@
-// WebSecurityConfig.java
 package com.example.course.Config;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,11 +30,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .passwordEncoder(passwordEncoder);
     }
 
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+                .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/", "/registration", "/static/**", "/login").permitAll()
+                .antMatchers("/", "/registration", "/login", "/static/**", "/css/**", "/js/**", "/images/**", "/webjars/**", "/Posters/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -45,4 +46,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .logout()
                 .permitAll();
     }
+
 }

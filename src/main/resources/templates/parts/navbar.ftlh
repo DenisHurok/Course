@@ -2,35 +2,31 @@
 <#import "login.ftlh" as l>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-<a class="navbar-brand" href="/">QuicFun</a>
+<a class="navbar-brand" href="/" style="font-size: 24px;">QuickFun</a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
 </button>
-
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link" href="/" style="font-size: 18px;">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/movies">Фильмы</a>
+            <a class="nav-link" href="/movies" style="font-size: 18px;">Фильмы</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/places" style="font-size: 18px;">Заведения</a> <!-- New tab for places -->
         </li>
         <#if isAdmin>
         <li class="nav-item">
-            <a class="nav-link" href="/editRoom">EditRoom</a>
+            <a class="nav-link" href="/user" style="font-size: 18px;">User list</a>
         </li>
     </#if>
-    <#if isAdmin>
-    <li class="nav-item">
-        <a class="nav-link" href="/user">User list</a>
-    </li>
-</#if>
 </ul>
-
-<div class="navbar-text mr-3">${name}</div>
+<div class="navbar-text mr-3" style="font-size: 18px;">${name}</div>
 <#if user??>
 <@l.logout />
-        </#if>
+</#if>
         </div>
         </nav>
